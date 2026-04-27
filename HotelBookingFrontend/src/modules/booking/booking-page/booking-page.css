@@ -1,0 +1,77 @@
+/* Page container */
+.container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Headings */
+h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #34495e;
+}
+
+/* Room info box */
+.room-box {
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border-left: 4px solid #3498db;
+}
+
+/* Labels */
+label {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+/* Inputs */
+input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Price */
+.total-price {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #27ae60;
+  font-weight: bold;
+}
+
+/* Button */
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Button hover */
+button:hover {
+  background: #2980b9;
+}
+
+/* Disabled button */
+button:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+}

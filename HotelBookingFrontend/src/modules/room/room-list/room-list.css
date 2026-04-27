@@ -1,0 +1,74 @@
+/* Heading */
+h3 {
+  text-align: center;
+  margin: 20px 0;
+  color: #2c3e50;
+}
+
+/* Empty message */
+p {
+  text-align: center;
+  color: #7f8c8d;
+}
+
+/* Room card */
+.card {
+  max-width: 600px;
+  margin: 15px auto;
+  padding: 15px;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #3498db;
+  transition: 0.2s;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: scale(1.02);
+}
+
+/* Room title */
+.card h4 {
+  margin-bottom: 8px;
+  color: #34495e;
+}
+
+/* Room details */
+.card p {
+  margin: 5px 0;
+  text-align: left;
+  color: #555;
+}
+
+/* Button */
+button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Hover */
+button:hover {
+  background: #1e8449;
+}
+
+/* Disabled button */
+button:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.card {
+  width: 250px;
+}

@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="card">
+    <h2>Register</h2>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+      <input type="text" placeholder="Name" formControlName="name" />
+
+      @if (form.get('name')?.invalid && form.get('name')?.touched) {
+        <span class="error">Name is required</span>
+      }
+
+      <input type="email" placeholder="Email" formControlName="email" />
+
+      @if (form.get('email')?.invalid && form.get('email')?.touched) {
+        <span class="error">Enter a valid email</span>
+      }
+
+      <input type="password" placeholder="Password" formControlName="password" />
+
+      @if (form.get('password')?.invalid && form.get('password')?.touched) {
+        <span class="error">
+          Password must be at least 6 characters, include uppercase and number
+        </span>
+      }
+
+      <select formControlName="role">
+        <option value="">Select Role</option>
+
+        @for (r of roles; track r) {
+          <option [value]="r">{{ r }}</option>
+        }
+      </select>
+
+      @if (form.get('role')?.invalid && form.get('role')?.touched) {
+        <span class="error">Please select a role</span>
+      }
+
+      <button type="submit" [disabled]="loading()">
+        @if (loading()) {
+          Registering...
+        } @else {
+          Register
+        }
+      </button>
+
+    </form>
+  </div>
+</div>

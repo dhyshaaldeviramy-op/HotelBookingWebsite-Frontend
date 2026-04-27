@@ -1,0 +1,79 @@
+<div class="owner-container">
+  <h2>Hotel Owner Dashboard</h2>
+
+  <div class="tabs">
+    <button [class.active]="activeTab() === 'hotels'" (click)="setTab('hotels')">Manage Hotels</button>
+    <button [class.active]="activeTab() === 'rooms'"  (click)="setTab('rooms')">Manage Rooms</button>
+  </div>
+
+  <!-- HOTELS TAB -->
+  <div *ngIf="activeTab() === 'hotels'" class="tab-content">
+    <h3>Add Hotel</h3>
+    <form [formGroup]="hotelForm" (ngSubmit)="addHotel()" class="form-container">
+      <div class="form-group">
+        <input formControlName="name" placeholder="Hotel Name" />
+      </div>
+      <div class="form-group">
+        <input formControlName="location" placeholder="Location" />
+      </div>
+      <div class="form-group">
+        <input formControlName="description" placeholder="Description (optional)" />
+      </div>
+      <button type="submit" class="btn-primary">Add Hotel</button>
+    </form>
+    <p class="success" *ngIf="hotelMsg()">{{ hotelMsg() }}</p>
+    <p class="error" *ngIf="hotelErrMsg()">{{ hotelErrMsg() }}</p>
+
+    <h3>My Hotels</h3>
+    <table *ngIf="hotels().length > 0">
+      <thead><tr><th>ID</th><th>Name</th><th>Location</th></tr></thead>
+      <tbody>
+        <tr *ngFor="let h of hotels()">
+          <td>{{ h.id }}</td>
+          <td>{{ h.name }}</td>
+          <td>{{ h.location }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <p *ngIf="hotels().length === 0">No hotels found. Add your first hotel above.</p>
+  </div>
+
+  <!-- ROOMS TAB -->
+  <div *ngIf="activeTab() === 'rooms'" class="tab-content">
+    <h3>Add Room</h3>
+    <form [formGroup]="roomForm" (ngSubmit)="addRoom()" class="form-container">
+      <div class="form-group">
+        <select formControlName="hotelId" (change)="loadRooms()">
+          <option value="" disabled selected>Select Hotel</option>
+          <option *ngFor="let h of hotels()" [value]="h.id">{{ h.name }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input formControlName="category" placeholder="Category (e.g. Deluxe)" />
+      </div>
+      <div class="form-group">
+        <input formControlName="price" placeholder="Price per night" type="number" />
+      </div>
+      <div class="form-group">
+        <input formControlName="availability" placeholder="Available rooms" type="number" />
+      </div>
+      <button type="submit" class="btn-primary">Add Room</button>
+    </form>
+    <p class="success" *ngIf="roomMsg()">{{ roomMsg() }}</p>
+    <p class="error" *ngIf="roomErrMsg()">{{ roomErrMsg() }}</p>
+
+    <h3>Rooms for selected Hotel</h3>
+    <table *ngIf="rooms().length > 0">
+      <thead><tr><th>ID</th><th>Category</th><th>Price</th><th>Availability</th></tr></thead>
+      <tbody>
+        <tr *ngFor="let r of rooms()">
+          <td>{{ r.id }}</td>
+          <td>{{ r.category }}</td>
+          <td>₹{{ r.price }}</td>
+          <td>{{ r.availability }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <p *ngIf="rooms().length === 0">No rooms found. Select a hotel above to see its rooms.</p>
+  </div>
+</div>

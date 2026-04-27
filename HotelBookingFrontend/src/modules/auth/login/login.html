@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="card">
+    <h2>Login</h2>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+      <!-- Error Message -->
+      @if (errorMessage()) {
+        <div class="error-banner">
+          {{ errorMessage() }}
+        </div>
+      }
+
+      <!-- Email -->
+      <div class="form-group">
+        <input
+          type="email"
+          placeholder="Email"
+          formControlName="email"
+        />
+
+        @if (form.get('email')?.invalid && form.get('email')?.touched) {
+          <span class="error">Enter a valid email</span>
+        }
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <input
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+        />
+
+        @if (form.get('password')?.invalid && form.get('password')?.touched) {
+          <span class="error">Password is required</span>
+        }
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" [disabled]="loading()">
+        @if (loading()) {
+          Logging in...
+        } @else {
+          Login
+        }
+      </button>
+
+    </form>
+
+    <!-- Register option -->
+    <p class="register-text">
+      Not registered yet?
+      <a routerLink="/register">Create an account</a>
+    </p>
+
+  </div>
+</div>

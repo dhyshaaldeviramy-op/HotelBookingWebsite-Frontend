@@ -1,0 +1,22 @@
+<div class="container">
+
+  <h3>Available Rooms</h3>
+
+  <div *ngIf="rooms.length === 0">
+    <p>No rooms available</p>
+  </div>
+
+  <div *ngFor="let room of rooms" class="card">
+    <h4>{{ room.category }}</h4>
+    <p>Price: ₹{{ room.price }}</p>
+    <p>Available: {{ room.availability }}</p>
+
+    <button 
+      (click)="bookRoom(room.id)" 
+      [disabled]="room.availability === 0">
+      
+      {{ room.availability > 0 ? 'Book Now' : 'Not Available' }}
+    </button>
+  </div>
+
+</div>

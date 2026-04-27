@@ -1,0 +1,25 @@
+<div class="add-hotel-container">
+  <h2>Add Your Hotel</h2>
+
+  <form [formGroup]="hotelForm" (ngSubmit)="addHotel()" class="hotel-form">
+    <div class="form-group">
+      <label for="name">Hotel Name</label>
+      <input id="name" formControlName="name" placeholder="Enter hotel name" />
+    </div>
+
+    <div class="form-group">
+      <label for="location">Location</label>
+      <input id="location" formControlName="location" placeholder="Enter location" />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description (Optional)</label>
+      <textarea id="description" formControlName="description" placeholder="Enter description" rows="4"></textarea>
+    </div>
+
+    <button type="submit" class="btn-primary">Add Hotel</button>
+  </form>
+
+  <p class="success" *ngIf="hotelMsg()">{{ hotelMsg() }}</p>
+  <p class="error" *ngIf="hotelErrMsg()">{{ hotelErrMsg() }}</p>
+</div>

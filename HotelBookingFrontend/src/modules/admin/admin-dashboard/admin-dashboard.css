@@ -1,0 +1,241 @@
+.admin-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+h2 { margin-bottom: 20px; }
+h3 { margin: 20px 0 10px; }
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  padding: 10px 24px;
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.tabs button.active {
+  background: #1976d2;
+  color: white;
+  border-color: #1976d2;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+form input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 180px;
+}
+
+form button {
+  padding: 8px 20px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th { background: #f0f0f0; }
+
+.status-booked {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.status-cancelled {
+  color: #c62828;
+  font-weight: bold;
+}
+
+.msg /* ── Container ── */
+.admin-container {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 24px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.admin-container h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #1a1a2e;
+  border-bottom: 2px solid #1976d2;
+  padding-bottom: 10px;
+}
+
+.admin-container h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 24px 0 12px;
+  color: #1a1a2e;
+}
+
+/* ── Tabs ── */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.tabs button {
+  padding: 10px 28px;
+  border: 2px solid #1976d2;
+  background: white;
+  color: #1976d2;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.tabs button:hover {
+  background: #e3f0fb;
+}
+
+.tabs button.active {
+  background: #1976d2;
+  color: white;
+}
+
+/* ── Form ── */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 12px;
+}
+
+form input {
+  padding: 9px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  min-width: 180px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+form input:focus {
+  border-color: #1976d2;
+}
+
+form input.ng-invalid.ng-touched {
+  border-color: #e53935;
+}
+
+form button[type="submit"] {
+  padding: 9px 24px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+form button[type="submit"]:hover {
+  background: #1558a8;
+}
+
+/* ── Messages ── */
+.success {
+  color: #2e7d32;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 6px 0;
+}
+
+.error {
+  color: #c62828;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 6px 0;
+}
+
+/* ── Table ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 14px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+thead {
+  background: #1976d2;
+  color: white;
+}
+
+thead th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+  transition: background 0.15s;
+}
+
+tbody tr:hover {
+  background: #f0f6ff;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody td {
+  padding: 11px 16px;
+  color: #444;
+}
+
+/* ── Empty state ── */
+p.empty {
+  color: #888;
+  font-size: 14px;
+  margin-top: 10px;
+  font-style: italic;
+}
+  

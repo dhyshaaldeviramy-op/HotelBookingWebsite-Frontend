@@ -1,0 +1,43 @@
+<div class="admin-container">
+  <h2>Super Admin Dashboard</h2>
+
+  <div class="tabs">
+    <button [class.active]="activeTab() === 'owners'" (click)="setTab('owners')">Manage Hotel Owners</button>
+    <button [class.active]="activeTab() === 'bookings'" (click)="setTab('bookings')">All Bookings</button>
+  </div>
+
+  <!-- HOTEL OWNERS TAB -->
+  <div *ngIf="activeTab() === 'owners'">
+    <app-all-hotel-owners></app-all-hotel-owners>
+  </div>
+
+  <!-- BOOKINGS TAB -->
+  <div *ngIf="activeTab() === 'bookings'">
+    <h3>All Customer Bookings</h3>
+    <table *ngIf="bookings().length > 0">
+      <thead>
+        <tr>
+          <th>Booking ID</th>
+          <th>Room ID</th>
+          <th>Check-In</th>
+          <th>Check-Out</th>
+          <th>Total Price</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let b of bookings()">
+          <td>{{ b.id }}</td>
+          <td>{{ b.roomId }}</td>
+          <td>{{ b.checkIn | date:'yyyy-MM-dd' }}</td>
+          <td>{{ b.checkOut | date:'yyyy-MM-dd' }}</td>
+          <td>₹{{ b.price }}</td>
+          <td [class.status-booked]="b.status === 'Confirmed'" [class.status-cancelled]="b.status === 'Cancelled'">
+            {{ b.status }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p *ngIf="bookings().length === 0">No bookings found in the system.</p>
+  </div>
+</div>

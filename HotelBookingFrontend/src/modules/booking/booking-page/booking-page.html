@@ -1,0 +1,29 @@
+<div class="container">
+
+  <h2>Book Room</h2>
+
+  <div *ngIf="room" class="room-box">
+    <h3>{{ room.category }}</h3>
+    <p>Price per day: ₹{{ room.price }}</p>
+  </div>
+
+  <hr>
+
+  <label>Check-In:</label>
+  <input type="date" [(ngModel)]="checkIn" (change)="calculatePrice()" />
+
+  <label>Check-Out:</label>
+  <input type="date" [(ngModel)]="checkOut" (change)="calculatePrice()" />
+
+  <label>Promo Code (Optional):</label>
+  <input type="text" [(ngModel)]="promoCode" placeholder="Enter promo code" />
+
+  <h3 class="total-price">Total Price: ₹{{ totalPrice }}</h3>
+
+  <p *ngIf="message">{{ message }}</p>
+
+  <button (click)="bookNow()" [disabled]="!checkIn || !checkOut">
+    Confirm Booking
+  </button>
+
+</div>

@@ -1,3 +1,4 @@
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../app/Environment/environment';
@@ -19,5 +20,6 @@ export class RoomService {
 
   addRoom(data: any) {
     return this.http.post(`${environment.apiUrl}/Room`, data, { responseType: 'text' }); // ← added responseType
+
   }
 }

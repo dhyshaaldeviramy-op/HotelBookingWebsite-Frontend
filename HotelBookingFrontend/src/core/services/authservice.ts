@@ -1,3 +1,4 @@
+
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -67,5 +68,6 @@ export class Authservice {
 
   isCustomer(): boolean {
     return this.getUser()?.role === 'Customer';
+
   }
 }

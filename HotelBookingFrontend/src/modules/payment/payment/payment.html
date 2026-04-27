@@ -1,0 +1,30 @@
+<div class="payment-container">
+  <h2>Complete Payment</h2>
+
+  <div class="summary">
+    <p><b>Booking ID:</b> {{ payment.bookingId }}</p>
+    <p><b>Amount to Pay:</b> ₹{{ payment.amount }}</p>
+  </div>
+
+  <form (ngSubmit)="submitPayment()">
+    <label>Booking ID</label>
+    <input type="number" [(ngModel)]="payment.bookingId" name="bookingId" required />
+
+    <label>Amount (₹)</label>
+    <input type="number" [(ngModel)]="payment.amount" name="amount" required />
+
+    <label>Payment Method</label>
+    <select [(ngModel)]="payment.method" name="method">
+      <option value="Online">Online</option>
+      <option value="Card">Card</option>
+      <option value="UPI">UPI</option>
+      <option value="Cash">Cash</option>
+    </select>
+
+    <button type="submit" [disabled]="paid">
+      {{ paid ? 'Paid ✅' : 'Pay Now' }}
+    </button>
+  </form>
+
+  <p class="message" *ngIf="message">{{ message }}</p>
+</div>

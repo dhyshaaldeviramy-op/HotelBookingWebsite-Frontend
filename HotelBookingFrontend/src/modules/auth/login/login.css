@@ -1,0 +1,114 @@
+/* Page background and centering */
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f6f8;
+  font-family: Arial, sans-serif;
+}
+
+/* Card layout */
+.card {
+  width: 360px;
+  padding: 30px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Title */
+h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form layout */
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Group inputs + errors */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Inputs */
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #1976d2;
+}
+
+/* Button */
+button {
+  margin-top: 5px;
+  padding: 10px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+button:hover {
+  background: #125aa0;
+}
+
+button:disabled {
+  background: #999;
+  cursor: not-allowed;
+}
+
+/* Error messages */
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Register text */
+.register-text {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+.register-text a {
+  margin-left: 5px;
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-text a:hover {
+  text-decoration: underline;
+}
+
+.error-banner {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ef9a9a;
+  font-size: 13px;
+  margin-bottom: 10px;
+  text-align: center;
+}

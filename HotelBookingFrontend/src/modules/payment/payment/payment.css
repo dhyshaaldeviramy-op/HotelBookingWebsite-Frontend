@@ -1,0 +1,61 @@
+.payment-container {
+  width: 350px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background: #f4f6f8;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.fetch-btn {
+  background: #28a745;
+}
+
+.fetch-btn:hover {
+  background: #1e7e34;
+}
+
+.message {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.result {
+  margin-top: 15px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 5px;
+}

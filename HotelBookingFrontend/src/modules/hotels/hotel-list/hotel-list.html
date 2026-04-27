@@ -1,0 +1,17 @@
+<h2>Hotels</h2>
+
+<div class="container">
+
+  <div class="search-bar">
+    <input type="text" [(ngModel)]="location" placeholder="Search by location..." />
+    <input type="number" [(ngModel)]="minPrice" placeholder="Min Price" />
+    <input type="number" [(ngModel)]="maxPrice" placeholder="Max Price" />
+    <button (click)="onSearch()">Search</button>
+  </div>
+
+  <div *ngFor="let hotel of hotels()" class="card">
+    <h3>{{ hotel.name }}</h3>
+    <p>{{ hotel.location }}</p>
+    <button (click)="viewDetails(hotel.id)">View Details</button>
+  </div>
+</div>

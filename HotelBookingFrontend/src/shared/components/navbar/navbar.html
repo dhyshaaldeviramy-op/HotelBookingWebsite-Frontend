@@ -1,0 +1,26 @@
+<nav class="navbar">
+  <span class="brand" routerLink="/hotels">🏨 Hotel Booking</span>
+
+  <div class="nav-links">
+    <ng-container *ngIf="auth.isLoggedIn() && auth.isSuperAdmin()">
+      <a routerLink="/admin/dashboard">Dashboard</a>
+      <span class="logout" (click)="auth.logout()">Logout</span>
+    </ng-container>
+
+    <ng-container *ngIf="auth.isLoggedIn() && auth.isOwner()">
+      <a routerLink="/owner/dashboard">My Hotels</a>
+      <span class="logout" (click)="auth.logout()">Logout</span>
+    </ng-container>
+
+    <ng-container *ngIf="auth.isLoggedIn() && auth.isCustomer()">
+      <a routerLink="/hotels">Home</a>
+      <a routerLink="/my-bookings">My Bookings</a>
+      <span class="logout" (click)="auth.logout()">Logout</span>
+    </ng-container>
+
+    <ng-container *ngIf="!auth.isLoggedIn()">
+      <a routerLink="/login">Login</a>
+      <a routerLink="/register">Register</a>
+    </ng-container>
+  </div>
+</nav>

@@ -1,0 +1,24 @@
+<div class="container">
+
+  <div *ngIf="hotel()" class="hotel-box">
+    <h2>{{ hotel().name }}</h2>
+    <p>📍 {{ hotel().location }}</p>
+    <p>{{ hotel().description }}</p>
+  </div>
+
+  <hr>
+
+  <h3>Rooms</h3>
+
+  <p *ngIf="rooms().length === 0">No rooms available.</p>
+
+  <div *ngFor="let room of rooms()" class="card">
+    <p><b>Category:</b> {{ room.category }}</p>
+    <p><b>Price:</b> ₹{{ room.price }} / night</p>
+    <p><b>Status:</b> {{ room.availability }}</p>
+    <button (click)="bookRoom(room)" [disabled]="room.availability === 'Booked' || room.availability === '0'">
+      {{ (room.availability !== 'Booked' && room.availability !== '0') ? 'Book Now' : 'Not Available' }}
+    </button>
+  </div>
+
+</div>
